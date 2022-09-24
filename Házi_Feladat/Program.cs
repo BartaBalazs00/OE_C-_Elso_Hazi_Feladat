@@ -12,6 +12,8 @@ namespace Házi_Feladat
         {
             int[] baratunkSzamai = new int[5];
             int[] sajatSzamaim = new int[5];
+            int baratunkSzamainakOsszege = 0;
+            int sajatSzamaimOsszege = 0;
             sajatSzamaim[4] = 0;
             for (int i = 0; i < 5; i++)
             {
@@ -23,6 +25,7 @@ namespace Házi_Feladat
                     stringSzam = Console.ReadLine();
                 }
                 baratunkSzamai[i] = szam;
+                baratunkSzamainakOsszege += szam;
             }
             for (int i = 0; i < baratunkSzamai.Length; i++)
             {
@@ -46,8 +49,10 @@ namespace Házi_Feladat
                 }
                 else
                 {
-                    int baratunkSzamainakOsszege = baratunkSzamai.Sum();
-                    int sajatSzamaimOsszege = sajatSzamaim.Sum();
+                    foreach (int szam in sajatSzamaim)
+	                {
+                        sajatSzamaimOsszege += szam;
+	                }
                     sajatSzamaim[4] = baratunkSzamainakOsszege - sajatSzamaimOsszege;
                 }
             }
@@ -56,6 +61,7 @@ namespace Házi_Feladat
                 Console.Write(sajatSzamaim[i] + ", ");
             }
             Console.Write(sajatSzamaim[4]);
+            Console.ReadKey();
         }
     }
 }
