@@ -58,7 +58,7 @@ namespace Házi_Feladat
             }
             for (int i = 0; i < sajatSzamaim.Length-1; i++)
             {
-                Console.Write(sajatSzamaim[i] + ", ");
+                Console.Write(sajatSzamaim[i] + ",");
             }
             Console.Write(sajatSzamaim[4]);
             Console.ReadKey();
