@@ -60,6 +60,7 @@ namespace Házi_Feladat
                     sajatSzamaim[4] = baratunkSzamainakOsszege - sajatSzamaimOsszege;
                 }
             }
+
             for (int i = 0; i < sajatSzamaim.Length-1; i++)
             {
                 Console.Write(sajatSzamaim[i] + ",");
