@@ -22,7 +22,7 @@ namespace Házi_Feladat
                 long szam;
                 while (!long.TryParse(stringSzam, out szam) || szam > 10000000000 || szam < -10000000000)
                 {
-                    Console.WriteLine("Nem számot adtál meg vagy nem a megengedett intevallumon belü add meg újra");
+                    Console.WriteLine("Nem számot adtál meg vagy nem a megengedett intevallumon belül add meg újra!");
                     stringSzam = Console.ReadLine();
                 }
                 
