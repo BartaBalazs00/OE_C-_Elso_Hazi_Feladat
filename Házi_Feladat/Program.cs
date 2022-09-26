@@ -17,20 +17,15 @@ namespace Házi_Feladat
             sajatSzamaim[4] = 0;
             for (int i = 0; i < 5; i++)
             {
-                long szam = Convert.ToInt64(Console.ReadLine());
                 
-                while (szam > 10000000000 || szam < -10000000000)
+                string stringSzam = Console.ReadLine();
+                long szam;
+                while (!long.TryParse(stringSzam, out szam) || szam > 10000000000 || szam < -10000000000)
                 {
-                    Console.WriteLine("Nem a megengedett intervallumon adtad meg add meg mégegyszer");
-                    szam = Convert.ToInt64(Console.ReadLine());
+                    Console.WriteLine("Nem számot adtál meg vagy nem a megengedett intevallumon belü add meg újra");
+                    stringSzam = Console.ReadLine();
                 }
-                //string stringSzam = Console.ReadLine();
-                //int szam;
-                //while (!int.TryParse(stringSzam, out szam))
-                //{
-                //    Console.WriteLine("Nem számot adtál meg, add meg újra");
-                //    stringSzam = Console.ReadLine();
-                //}
+                
                 baratunkSzamai[i] = szam;
                 baratunkSzamainakOsszege += szam;
             }
