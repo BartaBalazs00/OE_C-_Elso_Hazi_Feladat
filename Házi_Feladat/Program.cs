@@ -10,20 +10,27 @@ namespace Házi_Feladat
     {
         static void Main(string[] args)
         {
-            int[] baratunkSzamai = new int[5];
-            int[] sajatSzamaim = new int[5];
-            int baratunkSzamainakOsszege = 0;
-            int sajatSzamaimOsszege = 0;
+            long[] baratunkSzamai = new long[5];
+            long[] sajatSzamaim = new long[5];
+            long baratunkSzamainakOsszege = 0;
+            long sajatSzamaimOsszege = 0;
             sajatSzamaim[4] = 0;
             for (int i = 0; i < 5; i++)
             {
-                string stringSzam = Console.ReadLine();
-                int szam;
-                while (!int.TryParse(stringSzam, out szam))
+                long szam = Convert.ToInt64(Console.ReadLine());
+                
+                while (szam > 10000000000 || szam < -10000000000)
                 {
-                    Console.WriteLine("Nem számot adtál meg, add meg újra");
-                    stringSzam = Console.ReadLine();
+                    Console.WriteLine("Nem a megengedett intervallumon adtad meg add meg mégegyszer");
+                    szam = Convert.ToInt64(Console.ReadLine());
                 }
+                //string stringSzam = Console.ReadLine();
+                //int szam;
+                //while (!int.TryParse(stringSzam, out szam))
+                //{
+                //    Console.WriteLine("Nem számot adtál meg, add meg újra");
+                //    stringSzam = Console.ReadLine();
+                //}
                 baratunkSzamai[i] = szam;
                 baratunkSzamainakOsszege += szam;
             }
@@ -45,14 +52,11 @@ namespace Házi_Feladat
                         //mi + ((i + 1)/2)
                         double osztas = (double)(i + 1) / 2;
                         sajatSzamaim[i] = baratunkSzamai[i] + (int)Math.Round(osztas, MidpointRounding.AwayFromZero);
+                        sajatSzamaimOsszege += sajatSzamaim[i];
                     }
                 }
                 else
                 {
-                    foreach (int szam in sajatSzamaim)
-	                {
-                        sajatSzamaimOsszege += szam;
-	                }
                     sajatSzamaim[4] = baratunkSzamainakOsszege - sajatSzamaimOsszege;
                 }
             }
