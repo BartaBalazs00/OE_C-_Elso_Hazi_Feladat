@@ -14,7 +14,6 @@ namespace Házi_Feladat
             long[] sajatSzamaim = new long[5];
             long baratunkSzamainakOsszege = 0;
             long sajatSzamaimOsszege = 0;
-            sajatSzamaim[4] = 0;
             for (int i = 0; i < 5; i++)
             {
                 
@@ -46,9 +45,9 @@ namespace Házi_Feladat
                     {
                         //mi + ((i + 1)/2)
                         double osztas = (double)(i + 1) / 2;
-                        sajatSzamaim[i] = baratunkSzamai[i] + (int)Math.Round(osztas, MidpointRounding.AwayFromZero);
-                        sajatSzamaimOsszege += sajatSzamaim[i];
+                        sajatSzamaim[i] = baratunkSzamai[i] + (long)Math.Round(osztas, MidpointRounding.AwayFromZero);
                     }
+                    sajatSzamaimOsszege += sajatSzamaim[i];
                 }
                 else
                 {
